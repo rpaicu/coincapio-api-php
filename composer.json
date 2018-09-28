@@ -1,0 +1,25 @@
+{
+    "name": "efreelancer/coincapio-api-php",
+    "description": "CoinCap.io API PHP client",
+    "type": "library",
+    "require": {
+        "php": "^7.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "CoinCapIO\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CoinCapIO\\Tests\\": "tests/"
+        }
+    }
+}
