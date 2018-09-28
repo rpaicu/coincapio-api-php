@@ -2,6 +2,11 @@
 
 namespace CoinCapIO;
 
+/**
+ * Class Exception
+ * @package CoinCapIO
+ * @since   0.1
+ */
 class Exception extends \RuntimeException
 {
 

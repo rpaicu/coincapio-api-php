@@ -2,10 +2,18 @@
 
 namespace CoinCapIO;
 
-use CoincapIO\Endpoint\Assets;
+use CoinCapIO\Endpoint\Assets;
+use CoinCapIO\Endpoint\Candles;
+use CoinCapIO\Endpoint\Exchanges;
+use CoinCapIO\Endpoint\Markets;
+use CoinCapIO\Endpoint\Rates;
 
 /**
- * @property    Assets $assets - For work with assets (that mean tickers)
+ * @property    Assets $assets - The asset price is a volume-weighted average calculated by collecting Ticker data
+ * @property    Candles $candles - The /candles endpoint offers a look into how a market has performed historically
+ * @property    Exchanges $exchanges - Where cryptocurrency is being exchanged and offers high-level information on those exchanges.
+ * @property    Markets $markets - Take a closer look into exchanges with the /markets endpoint
+ * @property    Rates $rates - All prices on the CoinCap
  *
  * Single entry point for all classes
  *
@@ -14,7 +22,6 @@ use CoincapIO\Endpoint\Assets;
  */
 class API
 {
-
     /**
      * Magic method required for call of another classes
      *
@@ -44,5 +51,4 @@ class API
 
         return $object;
     }
-
 }

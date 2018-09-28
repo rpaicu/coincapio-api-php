@@ -6,16 +6,21 @@ use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
 
+/**
+ * Wrapper around basic http client
+ *
+ * @package CoinCapIO
+ * @since   0.1
+ */
 class Client
 {
-
     /**
      * @var HttpClient
      */
     private $client;
 
     /**
-     * API constructor.
+     * Client constructor.
      *
      * @param   string $version
      * @param   int $timeout
@@ -29,6 +34,8 @@ class Client
     }
 
     /**
+     * Check if options in allowed list
+     *
      * @param   array $options
      * @param   array $allowed_options
      * @return  bool
@@ -46,6 +53,8 @@ class Client
     }
 
     /**
+     * Execute HTTP request and return results
+     *
      * @param   Request $request
      * @param   array $options
      * @return  array
