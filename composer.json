@@ -1,5 +1,5 @@
 {
-    "name": "efreelancer/coincapio-api-php",
+    "name": "rpasoft/coincapio-api-php",
     "description": "CoinCap.io API PHP client",
     "type": "library",
     "require": {
