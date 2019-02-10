@@ -15,6 +15,8 @@ use GuzzleHttp\Psr7\Request;
 class Client
 {
     /**
+     * Http client object
+     *
      * @var HttpClient
      */
     private $client;
@@ -23,29 +25,29 @@ class Client
      * Client constructor.
      *
      * @param   string $version
-     * @param   int $timeout
+     * @param   int    $timeout
      */
     public function __construct(string $version = 'v2', int $timeout = 3)
     {
         $this->client = new HttpClient([
             'base_uri' => \sprintf('https://api.coincap.io/%s/', $version),
-            'timeout' => $timeout,
+            'timeout'  => $timeout,
         ]);
     }
 
     /**
      * Check if options in allowed list
      *
-     * @param   array $options
-     * @param   array $allowed_options
+     * @param   array $options          List of options
+     * @param   array $allowed_options  List of allowed options
      * @return  bool
      * @throws  Exception
      */
     protected function checkOptions(array $options = [], array $allowed_options = []): bool
     {
         array_map(
-            function($option) use ($allowed_options) {
-                Exception::inArray($option, $allowed_options);
+            function ($option) use ($allowed_options) {
+                Exception::optionIsNotAllowed($option, $allowed_options);
             },
             $options
         );
@@ -56,7 +58,7 @@ class Client
      * Execute HTTP request and return results
      *
      * @param   Request $request
-     * @param   array $options
+     * @param   array   $options
      * @return  array
      * @throws  \GuzzleHttp\Exception\GuzzleException
      */
