@@ -3,7 +3,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $api = new \CoinCapIO\API();
 
-// Get list of all exchanges
+// Get list of all candles
 $candlesAll = $api->candles->all([
     'exchange' => 'poloniex',
     'interval' => 'h8',

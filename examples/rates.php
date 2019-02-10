@@ -3,7 +3,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $api = new \CoinCapIO\API();
 
-// Get list of all exchanges
+// Get list of all rates
 $ratesAll = $api->rates->all();
 print_r($ratesAll);
 //{
@@ -27,7 +27,7 @@ print_r($ratesAll);
 //  "timestamp": 1536347807471
 //}
 
-// Get single exchange by id
+// Get single rate by id
 $rate = $api->rates->get('bitcoin');
 print_r($rate);
 //{
