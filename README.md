@@ -1,6 +1,6 @@
 # CoinCap.io API PHP library
 
-    rpasoft/coincapio-api-php
+    rpaicu/coincapio-api-php
 
 ## Basic example
 
