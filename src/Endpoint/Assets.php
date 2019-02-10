@@ -123,7 +123,7 @@ class Assets extends Client
      * @param   int|null $offset offset
      * @return  array
      * @throws  \GuzzleHttp\Exception\GuzzleException
-     * @since   0.2
+     * @since   0.9
      */
     public function markets(string $id, int $limit = null, $offset = null): array
     {
