@@ -1,5 +1,5 @@
 {
-    "name": "rpasoft/coincapio-api-php",
+    "name": "rpaicu/coincapio-api-php",
     "description": "CoinCap.io API PHP client",
     "type": "library",
     "require": {
@@ -14,12 +14,12 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "CoinCapIO\\": "src/"
+            "CoinCapIO\\": "./src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CoinCapIO\\Tests\\": "tests/"
+            "CoinCapIO\\Tests\\": "./tests/"
         }
     }
 }
