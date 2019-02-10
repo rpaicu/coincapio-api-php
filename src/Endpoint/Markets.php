@@ -24,20 +24,21 @@ class Markets extends Client
      * @param   array $options
      * @return  array
      * @throws  \GuzzleHttp\Exception\GuzzleException
+     * @since   0.1
      */
     public function all(array $options = []): array
     {
         // List of allowed options
         $allowed_options = [
-            'exchangeId',
-            'baseSymbol',
-            'quoteSymbol',
-            'baseId',
-            'quoteId',
-            'assetSymbol',
-            'assetId',
-            'limit',
-            'offset'
+            'exchangeId',   // (optional) search by exchange id
+            'baseSymbol',   // (optional) returns all containing the base symbol
+            'quoteSymbol',  // (optional) returns all containing the quote symbol
+            'baseId',       // (optional) returns all containing the base id
+            'quoteId',      // (optional) returns all containing the quote id
+            'assetSymbol',  // (optional) returns all assets containing symbol (base and quote)
+            'assetId',      // (optional) returns all assets containing id (base and quote)
+            'limit',        // (optional) max limit of 2000
+            'offset'        // (optional) offset
         ];
         // Check if options is in allowed list of current method
         $this->checkOptions(array_keys($options), $allowed_options);

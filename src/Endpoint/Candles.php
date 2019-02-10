@@ -24,22 +24,22 @@ class Candles extends Client
      * @param   array $options
      * @return  array
      * @throws  \GuzzleHttp\Exception\GuzzleException
+     * @since   0.1
      */
     public function all(array $options = []): array
     {
         // List of allowed options
         $allowed_options = [
-            'exchange',
-            'interval',
-            'baseId',
-            'quoteId',
-            'start',
-            'end',
-            'limit',
-            'offset'
+            'exchange',     // (required) exchange id
+            'interval',     // (required) candle interval
+            'baseId',       // (required) base id
+            'quoteId',      // (required) quote id
+            'start',        // (optional) UNIX time in milliseconds. omitting will return the most recent candles
+            'end',          // (optional) UNIX time in milliseconds. omitting will return the most recent candles
         ];
         // Check if options is in allowed list of current method
         $this->checkOptions(array_keys($options), $allowed_options);
+
 
         $req = new Request('GET', 'candles');
         return $this->doRequest($req, ['query' => $options]);

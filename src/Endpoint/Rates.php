@@ -17,10 +17,13 @@ use GuzzleHttp\Psr7\Request;
 class Rates extends Client
 {
     /**
-     * Get all prices from the CoinCap
+     * Get all rates from the CoinCap
+     *
+     * @example curl --location --request GET "api.coincap.io/v2/rates" --data ""
      *
      * @return  array
      * @throws  \GuzzleHttp\Exception\GuzzleException
+     * @since   0.1
      */
     public function all(): array
     {
@@ -31,13 +34,16 @@ class Rates extends Client
     /**
      * Get rate by id
      *
+     * @example curl --location --request GET "api.coincap.io/v2/rates/bitcoin" --data ""
+     *
      * @param   string $id
      * @return  array
      * @throws  \GuzzleHttp\Exception\GuzzleException
+     * @since   0.1
      */
     public function get(string $id): array
     {
-        $req = new Request('GET', \sprintf('rates/%s', $id));
+        $req  = new Request('GET', \sprintf('rates/%s', $id));
         $data = $this->doRequest($req);
         return \array_shift($data);
     }
